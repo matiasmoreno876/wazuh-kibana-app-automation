@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "npx cypress open",
+    "cy:install": "npx cypress install --force",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
