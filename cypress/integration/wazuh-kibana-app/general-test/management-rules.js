@@ -49,6 +49,9 @@ describe('Management - Rules', () => {
         cy.get('[class="euiButtonGroup euiButtonGroup--m"]')
             .click()
         cy.wait(3000);
+        cy.get('[class="euiTitle euiTitle--medium"]')
+            .should('exist')
+            .should('contain', 'Rules');
         cy.get('[class="euiTableRow customRowClass euiTableRow-isClickable"]')
             .should('exist')
             .should('be.visible');
