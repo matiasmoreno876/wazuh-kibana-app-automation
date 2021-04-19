@@ -1,4 +1,4 @@
-import {Given, When} from "cypress-cucumber-preprocessor/steps";
+import {Given} from "cypress-cucumber-preprocessor/steps";
 
 Given('The kibana admin user is logged in', () => {
     Cypress.on('uncaught:exception', (err, runnable) => {
@@ -7,20 +7,9 @@ Given('The kibana admin user is logged in', () => {
         return false
     })
 
-    cy.visit('http://192.168.100.6:5601/app/wazuh');
+    cy.visit('/app/wazuh');
     cy.get('input[data-test-subj="user-name"]', {timeout: 17000}).type('admin');
     cy.get('input[data-test-subj="password"]', {timeout: 17000}).type('admin');
     cy.get('button[data-test-subj="submit"]', {timeout: 17000}).click();
-    cy.wait(10000);
+    cy.wait(12000);
 })
-
-When('The user navigates to rules', () => {
-    cy.get('.eui > .euiFlexGroup')
-        .click();
-    cy.get('[class="euiButtonEmpty euiButtonEmpty--text wz-menu-button "]')
-        .first()
-        .click();
-    cy.get('[class="euiSideNavItem euiSideNavItem--trunk"]')
-        .first()
-        .click();
-});
