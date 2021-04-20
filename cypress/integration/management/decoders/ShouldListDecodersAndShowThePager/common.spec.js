@@ -1,13 +1,8 @@
-import {Given, When} from "cypress-cucumber-preprocessor/steps";
+import {When} from "cypress-cucumber-preprocessor/steps";
+import WzMenu from "../../../elements/pages/wzMenu/WzMenu";
 
 When('The user navigates to decoders', () => {
-    cy.get('.eui > .euiFlexGroup')
-        .click();
-    cy.get('[class="euiButtonEmpty euiButtonEmpty--text wz-menu-button "]')
-        .first()
-        .click();
-    cy.get('[class="euiSideNavItem euiSideNavItem--trunk"]')
-        .eq(1)
-        .click();
+    const wzMenu = new WzMenu();
+    wzMenu.goToDecoders();
     cy.wait(3000);
 });

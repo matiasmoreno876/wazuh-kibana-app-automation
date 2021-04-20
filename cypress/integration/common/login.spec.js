@@ -1,4 +1,6 @@
 import {Given} from "cypress-cucumber-preprocessor/steps";
+import LoginPage from "../elements/pages/login/LoginPage";
+import {USERNAME, PASSWORD} from "../elements/utils/const";
 
 Given('The kibana admin user is logged in', () => {
     Cypress.on('uncaught:exception', (err, runnable) => {
@@ -7,9 +9,12 @@ Given('The kibana admin user is logged in', () => {
         return false
     })
 
-    cy.visit('/app/wazuh');
-    cy.get('input[data-test-subj="user-name"]', {timeout: 17000}).type('admin');
-    cy.get('input[data-test-subj="password"]', {timeout: 17000}).type('admin');
-    cy.get('button[data-test-subj="submit"]', {timeout: 17000}).click();
+    const login = new LoginPage();
+    login.visit();
+    login
+        .fillUsername(USERNAME)
+        .fillPassword(PASSWORD)
+        .submit();
+
     cy.wait(12000);
 })

@@ -1,23 +1,27 @@
 import {Then, When} from "cypress-cucumber-preprocessor/steps";
+import WzMenu from "../../../elements/pages/wzMenu/WzMenu";
+
+const wzMenu = new WzMenu();
+const decoders = wzMenu.getDecoders();
 
 When('The user press button custom decoders', () => {
     cy.wait(3000);
-    cy.get('[class="euiButtonGroup euiButtonGroup--m"]')
+    decoders.getCustomDecodersButton()
         .click()
-    cy.wait(3000);
 });
 
 Then('The user should see the custom decoders', () => {
-    cy.get('[class="euiTitle euiTitle--medium"]')
+    cy.wait(3000);
+    decoders.getTittle()
         .should('exist')
         .should('contain', 'Decoders');
-    cy.get('[class="euiTableRow customRowClass euiTableRow-isClickable"]')
+    decoders.getTable()
         .should('exist')
         .should('be.visible');
-    cy.get('[data-test-subj="tablePaginationPopoverButton"]')
+    decoders.getTablePaginationDropdowns()
         .should('exist')
         .should('be.visible');
-    cy.get('nav[class="euiPagination"]')
+    decoders.getTablePaginationListPages()
         .should('exist')
         .should('be.visible');
 });
