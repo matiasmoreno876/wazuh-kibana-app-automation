@@ -1,5 +1,5 @@
 import {When} from "cypress-cucumber-preprocessor/steps";
-import WzMenu from "../../../elements/pages/wzMenu/WzMenu";
+import WzMenu from "../../../../pageobjects/wzMenu/WzMenu";
 
 When('The user navigates to decoders', () => {
     const wzMenu = new WzMenu();

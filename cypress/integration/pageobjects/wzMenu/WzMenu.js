@@ -1,9 +1,11 @@
 import Decoders from "./Decoders";
+import Rules from "./Rules";
 
 class WzMenu {
 
     constructor() {
         this.decoders = new Decoders();
+        this.rules = new Rules();
     }
 
     getListButtons() {
@@ -23,8 +25,21 @@ class WzMenu {
         button.click();
     }
 
+    goToRules() {
+        this.getListButtons()
+            .click();
+        this.getManagementButton()
+            .click();
+        const button = this.rules.getRulesButton();
+        button.click();
+    }
+
     getDecoders() {
         return this.decoders;
+    }
+
+    getRules() {
+        return this.rules;
     }
 
 }

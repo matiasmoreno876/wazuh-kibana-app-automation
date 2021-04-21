@@ -1,6 +1,6 @@
 import {Given} from "cypress-cucumber-preprocessor/steps";
-import LoginPage from "../elements/pages/login/LoginPage";
-import {USERNAME, PASSWORD} from "../elements/utils/const";
+import LoginPage from "../pageobjects/login/LoginPage";
+import {USERNAME, PASSWORD} from "../utils";
 
 Given('The kibana admin user is logged in', () => {
     Cypress.on('uncaught:exception', (err, runnable) => {

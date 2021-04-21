@@ -1,3 +1,5 @@
+import {getObject} from "../../utils";
+
 class Decoders {
 
     constructor() {
@@ -14,53 +16,49 @@ class Decoders {
         this.buttonRestartSelector = '.euiText--small > .euiFlexGroup > .euiFlexItem--flexGrowZero > .euiButton > .euiButtonContent';
     }
 
-    getObject(selector) {
-        return cy.get(selector);
-    }
-
     getDecodersButton() {
-        return this.getObject(this.decodersButtonSelector)
+        return getObject(this.decodersButtonSelector)
             .eq(1);
     }
 
     getTittle() {
-        return this.getObject(this.titleSelector);
+        return getObject(this.titleSelector);
     }
 
     getTable() {
-        return this.getObject(this.tableSelector);
+        return getObject(this.tableSelector);
     }
 
     getTablePaginationDropdowns() {
-        return this.getObject(this.dropdownPaginationSelector);
+        return getObject(this.dropdownPaginationSelector);
     }
 
     getTablePaginationListPages() {
-        return this.getObject(this.listPages);
+        return getObject(this.listPages);
     }
 
     getCustomDecodersButton() {
-        return this.getObject(this.customDecodersButtonSelector);
+        return getObject(this.customDecodersButtonSelector);
     }
 
     getManageDecodersFilesButton() {
-        return this.getObject(this.manageDecodersFilesButtonSelector);
+        return getObject(this.manageDecodersFilesButtonSelector);
     }
 
     getEditDecoderButton() {
-        return this.getObject(this.editDecoderButtonSelector);
+        return getObject(this.editDecoderButtonSelector);
     }
 
     getSaveDecoderButton() {
-        return this.getObject(this.saveDecoderButtonSelector);
+        return getObject(this.saveDecoderButtonSelector);
     }
 
     getMessageConfirmSave() {
-        return this.getObject(this.messageConfirmSaveSelector);
+        return getObject(this.messageConfirmSaveSelector);
     }
 
     getButtonRestart() {
-        return this.getObject(this.buttonRestartSelector);
+        return getObject(this.buttonRestartSelector);
     }
 
 }

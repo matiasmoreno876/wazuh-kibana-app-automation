@@ -1,5 +1,5 @@
 import {Then, When} from "cypress-cucumber-preprocessor/steps";
-import WzMenu from "../../../elements/pages/wzMenu/WzMenu";
+import WzMenu from "../../../../pageobjects/wzMenu/WzMenu";
 
 const wzMenu = new WzMenu();
 const decoders = wzMenu.getDecoders();
