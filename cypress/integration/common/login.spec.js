@@ -11,6 +11,7 @@ Given('The kibana admin user is logged in', () => {
 
     const login = new LoginPage();
     login.visit();
+    cy.wait(5000);
     login
         .fillUsername(USERNAME)
         .fillPassword(PASSWORD)
